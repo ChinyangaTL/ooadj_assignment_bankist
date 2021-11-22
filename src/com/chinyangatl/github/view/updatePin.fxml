@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<DialogPane prefHeight="100.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chinyangatl.github.controller.UpdatePinController">
+    <headerText>
+        Change Pin
+    </headerText>
+    <content>
+        <GridPane hgap="10" vgap="10">
+            <TextField fx:id="txtNewPin" GridPane.columnIndex="1" />
+            <TextField fx:id="txtNewPinConfirm" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <Label text="New Pin" />
+         <Label prefHeight="17.0" prefWidth="74.0" text="Confirm Pin" GridPane.rowIndex="1" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+    </content>
+
+</DialogPane>

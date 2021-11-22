@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" prefHeight="486.0" prefWidth="715.0" style="-fx-background-color: #FBFEF9;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chinyangatl.github.controller.DashboardController">
+      <top>
+         <AnchorPane style="-fx-background-color: #FBFEF9;">
+            <Label fx:id="txtWelcome" layoutY="13.0" text="Label" textFill="#71716f">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+            <padding>
+               <Insets left="20.0" />
+            </padding></Label>
+             <ImageView fitHeight="48.0" fitWidth="59.0" layoutX="334.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@../res/logo.png" />
+                 </image>
+             </ImageView>
+            <Button fx:id="btnLogout" layoutX="653.0" layoutY="10.0" mnemonicParsing="false" onAction="#logout" style="-fx-cursor: hand; -fx-background-color: #000004;" text="Logout" textFill="#fbfef9" AnchorPane.rightAnchor="20.0">
+            <font>
+               <Font size="14.0" />
+            </font></Button>
+         </AnchorPane>
+      </top>
+
+      <left>
+          <VBox style="-fx-background-color: #FBFEF9;">
+              <Label fx:id="txtBalance" alignment="CENTER" text="Balance" textFill="#71716f">
+            <padding>
+               <Insets left="20.0" />
+            </padding>
+                  <font>
+                      <Font size="17.0" />
+                  </font>
+            </Label>
+              <Label text="Your Transactions" textFill="#71716f">
+            <padding>
+               <Insets left="20.0" />
+            </padding>
+            <VBox.margin>
+               <Insets bottom="5.0" top="15.0" />
+            </VBox.margin>
+            <font>
+               <Font size="14.0" />
+            </font></Label>
+
+              <ListView fx:id="listTransactions" prefWidth="400">
+                  <placeholder>
+                      <Label text="Click Show Statement to show transactions" />
+                  </placeholder>
+            <VBox.margin>
+               <Insets left="20.0" />
+            </VBox.margin></ListView>
+          </VBox>
+
+      </left>
+      <center>
+         <GridPane alignment="CENTER" style="-fx-background-color: #FBFEF9;">
+             <padding>
+                 <Insets left="20.0" right="20.0" />
+             </padding>
+            <Label text="Deposit" textFill="#71716f" GridPane.columnIndex="1">
+            <font>
+               <Font size="18.0" />
+            </font></Label>
+            <TextField fx:id="depositAmount" promptText="Amount" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+               <Font size="14.0" />
+            </font>
+            <GridPane.margin>
+               <Insets bottom="20.0" />
+            </GridPane.margin></TextField>
+            <Button mnemonicParsing="false" onAction="#deposit" style="-fx-cursor: hand; -fx-background-color: #42ba96;" text="Confirm" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <font>
+               <Font size="14.0" />
+            </font>
+            <GridPane.margin>
+               <Insets bottom="20.0" left="10.0" />
+            </GridPane.margin></Button>
+            <Label text="Withdraw" textFill="#71716f" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+               <Font size="18.0" />
+            </font></Label>
+            <TextField fx:id="withdrawAmount" promptText="Amount" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <font>
+               <Font size="14.0" />
+            </font></TextField>
+            <Button fx:id="btnWithdraw" mnemonicParsing="false" onAction="#withdraw" style="-fx-cursor: hand; -fx-background-color: #ffc107;" text="Confirm" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <GridPane.margin>
+               <Insets left="10.0" />
+            </GridPane.margin>
+            <font>
+               <Font size="14.0" />
+            </font></Button>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+         </GridPane>
+
+      </center>
+   <bottom>
+      <AnchorPane prefHeight="20.0" prefWidth="715.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox AnchorPane.leftAnchor="20.0">
+               <children>
+                     <Button mnemonicParsing="false" onAction="#showAccountDetails" prefWidth="125.0" style="-fx-cursor: hand; -fx-background-color: #5bc0de;" text="My Account Details" textFill="WHITE" />
+                     <Button mnemonicParsing="false" onAction="#updatePinDialog" prefWidth="125.0" style="-fx-cursor: hand; -fx-background-color: #5bc0de;" text="Change Pin" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                     <Button mnemonicParsing="false" onAction="#showStatement" prefWidth="125.0" style="-fx-cursor: hand; -fx-background-color: #5bc0de;" text="Show Statement" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+               <Button layoutX="617.0" layoutY="-1.0" mnemonicParsing="false" onAction="#removeAccount" prefWidth="125.0" style="-fx-cursor: hand; -fx-background-color: #df4759;" text="Delete Account" textFill="WHITE" AnchorPane.rightAnchor="20.0" />
+            <Button layoutX="434.0" layoutY="-1.0" mnemonicParsing="false" onAction="#createNewAccount" prefWidth="125.0" style="-fx-cursor: hand; -fx-background-color: #42ba96;" text="Add Account" textFill="WHITE" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" top="15.0" />
+         </BorderPane.margin>
+      </AnchorPane>
+   </bottom>
+
+</BorderPane>

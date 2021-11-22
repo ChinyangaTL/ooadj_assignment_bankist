@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chinyangatl.github.controller.Controller">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="236.0" style="-fx-background-color: #FBFEF9;">
+         <children>
+            <Label layoutX="7.0" layoutY="230.0" text="Simple, minimalistic banking." textFill="#71716f">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label layoutX="48.0" layoutY="166.0" text="Bankist" textFill="#71716f">
+               <font>
+                  <Font name="Arial" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="65.0" fitWidth="108.0" layoutX="72.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TabPane prefHeight="400.0" prefWidth="419.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Login">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FBFEF9;">
+                     <children>
+                        <Button fx:id="btnSwitchToAdmin" layoutX="234.0" layoutY="321.0" mnemonicParsing="false" onAction="#switchToAdminLogin" style="-fx-background-color: transparent;" text="Login As Admin" textFill="#0773ff" underline="true">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="70.0" layoutY="126.0" text="Account No" textFill="#71716f">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="111.0" layoutY="172.0" text="Pin No" textFill="#71716f">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="125.0" layoutY="40.0" text="Welcome Back" textFill="#71716f">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <PasswordField fx:id="txtPinNo" layoutX="190.0" layoutY="173.0" />
+                        <TextField fx:id="txtAccountNo" layoutX="190.0" layoutY="127.0" />
+                        <Button fx:id="btnLogin" layoutX="65.0" layoutY="233.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="274.0" style="-fx-background-color: #000004; -fx-cursor: hand;" text="Login" textFill="#fff2f2">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Sign Up">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FBFEF9;">
+                     <children>
+                        <TextField fx:id="txtFirstName" layoutX="26.0" layoutY="81.0" promptText="What's your name?" />
+                        <TextField fx:id="txtSurname" layoutX="194.0" layoutY="81.0" promptText="What's your surname?" />
+                        <TextField fx:id="txtAddress" layoutX="26.0" layoutY="137.0" promptText="Enter Your Address" />
+                        <TextField fx:id="txtEmployer" layoutX="194.0" layoutY="137.0" promptText="Employer Name?" />
+                        <Spinner fx:id="inputAge" layoutX="26.0" layoutY="195.0" max="110" min="0">
+                         <tooltip>
+                             <Tooltip text="Age" />
+                         </tooltip>
+                        </Spinner>
+                        <ChoiceBox fx:id="inputAccountType" layoutX="194.0" layoutY="195.0" prefWidth="150.0" value="Account Type">
+                            <tooltip>
+                                <Tooltip text="You must be employed to make a cheque account" />
+                            </tooltip>
+                          <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Savings" />
+                                  <String fx:value="Cheque" />
+                                  <String fx:value="InterestBearing" />
+                              </FXCollections>
+                          </items>
+                        </ChoiceBox>
+                        <Button fx:id="btnSignup" layoutX="119.0" layoutY="270.0" mnemonicParsing="false" onAction="#signup" prefHeight="25.0" prefWidth="151.0" style="-fx-background-color: #000004;" text="Join Us!" textFill="#fbfef9">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="57.0" layoutY="29.0" text="Joining us is only a few steps away">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtNameErr" layoutX="26.0" layoutY="106.0" opacity="0.0" text="* Field cannot be empty" textFill="#d00000" />
+                        <Label fx:id="txtSurnameErr" layoutX="194.0" layoutY="106.0" opacity="0.0" text="* Field cannot be empty" textFill="#d00000" />
+                        <Label fx:id="txtAddressErr" layoutX="26.0" layoutY="162.0" opacity="0.0" text="* Field cannot be empty" textFill="#d00000" />
+                        <Label fx:id="txtAgeErr" layoutX="26.0" layoutY="220.0" opacity="0.0" text="* Field cannot be empty" textFill="#d00000" />
+                        <Label fx:id="txtAccountErr" layoutX="194.0" layoutY="220.0" opacity="0.0" text="* Field cannot be empty" textFill="#d00000" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</HBox>
